@@ -1,0 +1,14 @@
+{
+    "name": "mawoscha/german-localepack_fr_zz",
+    "type": "magento-module",
+    "license":"OSL-3.0",
+    "description":"French (Custom) Community Translation",
+    "authors":[
+        {
+            "name":"Your Name"
+        }
+    ],
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

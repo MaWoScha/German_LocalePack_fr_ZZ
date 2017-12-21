@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category  German
+ * @package   German_LocalePack
+ * @authors   MaWoScha <mawoscha@siempro.co, http://www.siempro.co/>
+ * @developer MaWoScha <mawoscha@siempro.co, http://www.siempro.co/>
+ * @license   http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+ -->
+<config>
+    <modules>
+        <German_LocalePackFrZz>
+            <version>0.1.0</version>
+            <locale>fr_ZZ</locale>
+            <title>French (Custom) Language Pack</title>
+            <link_git>https://github.com/MaWoScha/German_LocalePack_fr_ZZ</link_git>
+            <link>http://www.yourwebsite.de</link>
+            <author>Your Name</author>
+        </German_LocalePackFrZz>
+    </modules>
+
+    <global>
+        <models>
+            <localepackfrzz>
+                <class>German_LocalePackFrZz_Model</class>
+            </localepackfrzz>
+        </models>
+        <helpers>
+            <localepackfrzz>
+                <class>German_LocalePackFrZz_Helper</class>
+            </localepackfrzz>
+        </helpers>
+        <blocks>
+            <localepackfrzz>
+                <class>German_LocalePackFrZz_Block</class>
+            </localepackfrzz>
+        </blocks>
+        <events>
+            <adminhtml_controller_action_predispatch_start>
+                <observers>
+                    <localepackfrzz>
+                        <class>localepackfrzz/observer</class>
+                        <method>adminhtmlControllerActionPredispatchStart</method>
+                    </localepackfrzz>
+                </observers>
+            </adminhtml_controller_action_predispatch_start>
+        </events>
+    </global>
+
+    <default>
+        <localepackfrzz>
+             <notification>
+                <url>https://github.com/MaWoScha/German_LocalePack_fr_ZZ</url>
+            </notification>
+        </localepackfrzz>
+        <magesetup>
+            <default_country>FR</default_country>
+        </magesetup>
+    </default>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <localepackfrzz>
+                    <files>
+                    	<default>localepacken.xml</default>
+                    </files>
+                </localepackfrzz>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <German_LocalePackFrZz>
+                    <files>
+                        <localepackfrzz>German_LocaleFrZz.csv</localepackfrzz>
+                        <default>German_LocaleFr.csv</default>
+                    </files>
+                </German_LocalePackFrZz>
+            </modules>
+        </translate>
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children> <!--
+                                        <localepacks translate="title" module="localepackfrzz">
+                                            <title>Language Packs</title>
+                                    		<children> -->
+                                        		<localepackfrzz translate="title" module="localepackfrzz">
+                                            		<title>French (Custom) Language Pack</title>
+                                        		</localepackfrzz> <!--
+                                    		</children>
+                                        </localepacks> -->
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+
+</config>
